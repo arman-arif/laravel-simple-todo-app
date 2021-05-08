@@ -17,7 +17,7 @@
             <button class="btn btn-outline-secondary" type="submit">+ Add</button>
         </div>
     </form>
-    @include('layouts.errors')
+    @include('partials.errors')
     <div class="border rounded p-3 mb-3 overflow-auto" style="height: 300px">
         <table class="table table-hover">
             @foreach ($tasks as $task)
