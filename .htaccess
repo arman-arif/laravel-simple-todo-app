@@ -1,7 +1,16 @@
-RewriteEngine On
-RewriteBase /
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteEngine On
+# RewriteBase /
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
 
-# Anything else goes to Wordpress
-RewriteRule ^(.*)$ public/$1 [L]
+# # Anything else goes to Wordpress
+# RewriteRule ^(.*)$ public/$1 [L]
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /public/
+    RewriteRule ^(/)?$ public/index.php [L]
+</IfModule>
