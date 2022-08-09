@@ -13,15 +13,15 @@ Now follow the steps below
 -   Clone the repository with the command prompt/ Console / Terminal or Your can use Git Bash also [*** You will need the Git VCS installed in your system]
 -   Console into the project folder and run the command:
 
-    > composer install
+    > `composer install`
 
     this should install the Laravel framework packages
 
 -   Then run
-    > php artisan migrate:refresh --seed
+    > `php artisan migrate:refresh --seed`
 -   Now run
 
-    > php artisan serve
+    > `php artisan serve`
 
     Now open the link shown in the terminal [Note: Do not close the Terminal/Console]
 
