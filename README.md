@@ -18,7 +18,7 @@ Now follow the steps below
     this should install the Laravel framework packages
 
 -   Then run
-    > `php artisan migrate:refresh --seed`
+    > `php artisan migrate:fresh --seed`
 -   Now run
 
     > `php artisan serve`
