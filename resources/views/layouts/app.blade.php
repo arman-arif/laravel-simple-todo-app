@@ -18,7 +18,9 @@
         @include('partials.footer')
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    @stack('js')
 </body>
 
 </html>
