@@ -41,7 +41,10 @@ $(document).on('click', '.delete-item', (event) => {
 
     $.ajax({
         url: url,
-        type: 'GET',
+        type: 'DELETE',
+        data: {
+            _token: $('input[name=_token]').val()
+        },
         success: function (response) {
             $('#successMessage').html(response.message).show();
             setTimeout(() => {
@@ -66,7 +69,10 @@ $(document).on('click', '.update-item', (event) => {
 
     $.ajax({
         url: url,
-        type: 'GET',
+        type: 'PATCH',
+        data: {
+            _token: $('input[name=_token]').val()
+        },
         success: function (response) {
             $('#successMessage').html(response.message).show();
             setTimeout(() => {

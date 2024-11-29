@@ -24,6 +24,6 @@ Route::group(['prefix' => 'index', 'as' => 'ajax.'], function () {
     Route::get('/', [TodoAjaxController::class, 'index'])->name('index');
     Route::get('/list', [TodoAjaxController::class, 'list'])->name('list');
     Route::post('/new', [TodoAjaxController::class, 'store'])->name('store');
-    Route::get('/update/{id}', [TodoAjaxController::class, 'update'])->name('update');
-    Route::get('/remove/{id}', [TodoAjaxController::class, 'delete'])->name('delete');
+    Route::patch('/update/{id}', [TodoAjaxController::class, 'update'])->name('update');
+    Route::delete('/remove/{id}', [TodoAjaxController::class, 'delete'])->name('delete');
 });

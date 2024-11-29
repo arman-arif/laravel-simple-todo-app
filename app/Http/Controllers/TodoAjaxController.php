@@ -26,7 +26,6 @@ class TodoAjaxController extends Controller
         $todo->save();
 
         return [
-            'success' => true,
             'message' => 'New ToDo task listed successfully',
             'data' => array_merge($todo->toArray(), [
                 'update_url' => route('ajax.update', $todo->id),
@@ -43,8 +42,7 @@ class TodoAjaxController extends Controller
         $todo->done == 0 ? $todo->done = 1 : $todo->done = 0;
         $todo->save();
 
-return [
-            'success' => true,
+        return [
             'message' => 'Task successfully listed as complete.',
         ];
     }
@@ -56,13 +54,13 @@ return [
         $todo->delete();
 
         return [
-            'success' => true,
             'message' => 'Task removed successfully',
         ];
     }
 
     public function list() {
         $tasks = Todo::all()->sortByDesc('updated_at');
+
         return [
             'pending' => view('ajax.todo_list', [
                 'tasks' => $tasks->where('done', 0),
